@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Main" customModule="MovieFlix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldd-Nx-bbq" userLabel="Top Divider">
+                                <rect key="frame" x="32" y="59" width="329" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="56l-R1-NKk"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="BCd-M7-u3V">
+                                <rect key="frame" x="16" y="76" width="361" height="56"/>
+                                <color key="barTintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rJi-rJ-d63"/>
+                                </connections>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWv-EV-w9h" userLabel="Content Divider">
+                                <rect key="frame" x="32" y="148" width="329" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hjF-AF-ZcE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXX-z4-Sry" userLabel="Bottom Divider">
+                                <rect key="frame" x="32" y="801" width="329" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mSu-z6-p0x"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Doj-Vg-PXv">
+                                <rect key="frame" x="16" y="149" width="361" height="652"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Ie-7h-eUC">
+                                    <size key="itemSize" width="128" height="172"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xXX-z4-Sry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="2tD-5R-IeY"/>
+                            <constraint firstItem="BCd-M7-u3V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Py-MD-Fld"/>
+                            <constraint firstItem="BCd-M7-u3V" firstAttribute="top" secondItem="ldd-Nx-bbq" secondAttribute="bottom" constant="16" id="Cgf-qh-5IP"/>
+                            <constraint firstItem="Doj-Vg-PXv" firstAttribute="top" secondItem="kWv-EV-w9h" secondAttribute="bottom" id="FPJ-Ns-osE"/>
+                            <constraint firstItem="ldd-Nx-bbq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="G4W-5h-ja7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ldd-Nx-bbq" secondAttribute="trailing" constant="16" id="R7z-ZC-Pjq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xXX-z4-Sry" secondAttribute="trailing" constant="16" id="WlO-TX-T3k"/>
+                            <constraint firstItem="kWv-EV-w9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="aRN-tv-SVD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Doj-Vg-PXv" secondAttribute="trailing" constant="16" id="cnw-tr-SVx"/>
+                            <constraint firstItem="xXX-z4-Sry" firstAttribute="top" secondItem="Doj-Vg-PXv" secondAttribute="bottom" id="dSt-xb-mOq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xXX-z4-Sry" secondAttribute="bottom" constant="16" id="nl4-AK-qZM"/>
+                            <constraint firstItem="ldd-Nx-bbq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="teq-Pa-ySP"/>
+                            <constraint firstItem="kWv-EV-w9h" firstAttribute="top" secondItem="BCd-M7-u3V" secondAttribute="bottom" constant="16" id="vHG-bR-jkm"/>
+                            <constraint firstItem="Doj-Vg-PXv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yMR-ng-ilb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BCd-M7-u3V" secondAttribute="trailing" constant="16" id="zB8-lo-DBn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kWv-EV-w9h" secondAttribute="trailing" constant="16" id="zU7-ZT-81i"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moviesSearchBar" destination="BCd-M7-u3V" id="UKP-qr-8tl"/>
+                        <outlet property="moviesTableView" destination="Doj-Vg-PXv" id="uTN-e3-kMX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

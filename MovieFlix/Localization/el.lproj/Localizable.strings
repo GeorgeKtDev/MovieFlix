@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  MovieFlix
+
+  Created by George on 28/4/24.
+  
+*/
+
+"warning" = "Προσοχή";
+"error" = "Σφάλμα";
+
+"message_no_internet_connection" = "Δεν υπάρχει σύνδεση στο διαδίκτυο";
+"message_no_data_received" = "Τα δεδομένα δεν μπόρεσαν να ληφθούν";
+"message_invalid_url" = "Λάθος URL";

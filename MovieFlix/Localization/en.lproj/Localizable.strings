@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  MovieFlix
+
+  Created by George on 28/4/24.
+  
+*/
+
+"warning" = "Warning";
+"error" = "Error";
+
+"message_no_internet_connection" = "No internet connection";
+"message_no_data_received" = "Data could not be received";
+"message_invalid_url" = "Invalid URL";
